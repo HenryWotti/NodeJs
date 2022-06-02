@@ -152,7 +152,7 @@ app.delete("/account", verifyIfExistsAccountCPF, (request, response) => {
     return response.status(200).json(customers);
 });
 
-app.get("/balance", verifyIfExistsBalance, (request, response) => {
+app.get("/balance", verifyIfExistsAccountCPF, (request, response) => {
     const { customer } = request;
 
     const balance = getBalance(customer.statement);
